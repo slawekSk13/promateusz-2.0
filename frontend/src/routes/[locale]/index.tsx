@@ -1,15 +1,14 @@
 import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { fetchData } from "~/helpers/use-data.helper";
 import type { TripsAttributes } from "~/paths/types/trips.types";
-
 export const useTrips = routeLoader$(async (requestEvent) => {
   return await fetchData<TripsAttributes>("/trips", requestEvent);
 });
 
 export default component$(() => {
   const data = useTrips();
+
   return (
     <>
       <ul>

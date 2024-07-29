@@ -21,8 +21,30 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
+        <title>Promateusz - Przewodnik IVBV</title>
         <RouterHead />
         <ServiceWorkerRegister />
+        <script
+          dangerouslySetInnerHTML={`(function() {
+          function setTheme(theme) {
+            document.documentElement.className = theme;
+            localStorage.setItem('promateusz_theme', theme);
+          }
+          const theme = localStorage.getItem('promateusz_theme');
+          console.log(theme);
+          if (theme) {
+            setTheme(theme);
+          } else {
+            setTheme('light');
+          }
+        })();
+          window.addEventListener('load', function() {
+          const themeSwitch = document.querySelector('[name="promateusz_theme"]');
+          themeSwitch.checked = localStorage.getItem('promateusz_theme') === 'dark'? true: false;
+        }
+        );
+      `}
+        ></script>
       </head>
       <body lang="en">
         <RouterOutlet />

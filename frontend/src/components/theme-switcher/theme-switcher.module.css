@@ -1,0 +1,50 @@
+.ThemeSwitcher {
+  background: none;
+  border: none;
+  padding: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  --size: 2rem;
+
+  inline-size: var(--size);
+  block-size: var(--size);
+
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline-offset: 5px;
+
+  & > svg {
+    inline-size: 32px;
+    block-size: 32px;
+    stroke-linecap: round;
+    .Sun {
+      transition: var(--promateusz-standard-transition-time) fill;
+    }
+    .SunBeams {
+      transition: var(--promateusz-standard-transition-time) stroke;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  input:not(:checked) + .SunAndMoon {
+    .SunBeams {
+      opacity: 0;
+    }
+    .Moon > circle {
+      transform: translateX(-7px);
+    }
+  }
+
+  &:hover svg {
+    .Sun {
+      fill: var(--promateusz-accent);
+    }
+    .SunBeams {
+      stroke: var(--promateusz-accent);
+    }
+  }
+}

@@ -6,21 +6,23 @@
  *
  */
 
-:root {
-  --promateusz-dark: #3E3E3E;
-  --promateusz-light: #EAEAEA;
+html {
+  --promateusz-dark: #1d1d1d;
+  --promateusz-light: #eaeaea;
 
-  --promateusz-accent: #6A4199;
+  --promateusz-accent: #6b26ba;
+
   --promateusz-primary: var(--promateusz-light);
   --promateusz-secondary: var(--promateusz-dark);
-}
 
-:root:has(.theme-switch:checked) {
-  --promateusz-primary: var(--promateusz-dark);
-  --promateusz-secondary: var(--promateusz-light);
-}
+  --promateusz-standard-transition-time: 0.3s;
 
-html {
+  &.dark {
+    --promateusz-accent: #8012ff;
+    --promateusz-primary: var(--promateusz-dark);
+    --promateusz-secondary: var(--promateusz-light);
+  }
+  transition: var(--promateusz-standard-transition-time) background-color;
   line-height: 1;
   background-color: var(--promateusz-primary);
   color: var(--promateusz-secondary);
@@ -50,4 +52,9 @@ body {
   margin: 0;
   line-height: inherit;
   min-height: 100vh;
+}
+
+h1 {
+  color: var(--promateusz-accent);
+  text-align: center;
 }
