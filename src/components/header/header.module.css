@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: var(--promateusz-white);
+  align-self: stretch;
+  z-index: 1;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+
+    li {
+      margin: 0;
+      padding: 0;
+      a {
+        color: var(--promateusz-dark);
+        display: inline-block;
+        text-decoration: none;
+        transition: 0.3s color;
+        font-weight: 600;
+        padding-bottom: 4px;
+        &:hover {
+          color: var(--promateusz-accent);
+        }
+        &.ActivePath {
+          color: var(--promateusz-accent);
+          pointer-events: none;
+        }
+        &.Decoration:before {
+          content: "|";
+          position: relative;
+          color: var(--promateusz-secondary-accent);
+          left: -15px;
+          top: -1px;
+        }
+      }
+    }
+  }
+  .Switchers {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 450px) {
+  .header li {
+    display: inline-block;
+  }
+}

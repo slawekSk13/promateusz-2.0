@@ -1,0 +1,7 @@
+.Main {
+  width: clamp(60vw, 600px, 100vw);
+  background-color: var(--promateusz-white);
+  min-height: calc(100vh - 44px);
+  box-shadow: 0 0 160px 60px var(--promateusz-tertiary-accent);
+  padding: 10px 60px;
+}

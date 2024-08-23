@@ -1,0 +1,47 @@
+html {
+  --promateusz-white: #e6e7e7;
+  --promateusz-dark: #2f323a;
+  --promateusz-accent: #8e5cc7;
+  --promateusz-secondary-accent: #ffad05;
+  --promateusz-tertiary-accent: #c57b57;
+  --promateusz-standard-transition-time: 0.3s;
+
+  line-height: 1;
+  background-color: var(--promateusz-white);
+  color: var(--promateusz-secondary);
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
+  min-height: 100vh;
+  background-color: var(--promateusz-secondary-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: var(--promateusz-accent);
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
