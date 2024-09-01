@@ -6,7 +6,7 @@ export async function fetchData<T>(
   requestEvent: RequestEventLoader,
 ) {
   const locale = requestEvent.params.locale;
-  const apiToken = requestEvent.env.get("API_TOKEN");
+  const apiToken = requestEvent.env.get("STORYBLOK_API_TOKEN");
   const myHeaders = new Headers();
   myHeaders.append("Access-Control-Allow-Origin", "*");
 

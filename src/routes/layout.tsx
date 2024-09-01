@@ -1,8 +1,9 @@
 import { component$, Slot } from "@builder.io/qwik";
-import type { RequestHandler } from "@builder.io/qwik-city";
+import { RequestHandler, routeLoader$ } from "@builder.io/qwik-city";
 
 import Header from "~/components/header/header";
 import Main from "~/components/main/main";
+import { fetchData } from "~/helpers/use-data.helper";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -14,6 +15,12 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
     maxAge: 5,
   });
 };
+
+export const useContact = routeLoader$(async (requestEvent) => {
+  return (
+    await fetchData<{ mail: string; phone: number }>("book", requestEvent)
+  )[0]?.content;
+});
 
 export default component$(() => {
   return (

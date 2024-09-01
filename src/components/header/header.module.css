@@ -1,50 +1,89 @@
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+header {
   padding: 10px 20px;
   background-color: var(--promateusz-white);
   align-self: stretch;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  svg {
+    height: 18px;
+  }
+
+  .Logo {
+    width: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .Header {
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    inset: 99px 0 calc(-100vh + 99px);
+    background-color: var(--promateusz-white);
+    height: calc(100vh - 99px);
+    overflow: hidden;
+    transition: height 0.8s ease-in-out;
 
-    li {
+    &:not(.Open) {
+      height: 0;
+    }
+
+    .ContactData {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    a {
+      color: var(--promateusz-dark);
+      display: inline-block;
+      text-decoration: none;
+      transition: 0.3s color;
+
+      &:hover {
+        color: var(--promateusz-accent);
+      }
+
+      &.ActivePath {
+        color: var(--promateusz-accent);
+        pointer-events: none;
+      }
+
+      &.Decoration:before {
+        content: "|";
+        position: relative;
+        color: var(--promateusz-secondary-accent);
+        left: -15px;
+        top: -1px;
+      }
+    }
+
+    ul {
       margin: 0;
       padding: 0;
-      a {
-        color: var(--promateusz-dark);
-        display: inline-block;
-        text-decoration: none;
-        transition: 0.3s color;
-        font-weight: 600;
-        padding-bottom: 4px;
-        &:hover {
-          color: var(--promateusz-accent);
-        }
-        &.ActivePath {
-          color: var(--promateusz-accent);
-          pointer-events: none;
-        }
-        &.Decoration:before {
-          content: "|";
-          position: relative;
-          color: var(--promateusz-secondary-accent);
-          left: -15px;
-          top: -1px;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 30px;
+      justify-content: center;
+
+      li {
+        margin: 0;
+        padding: 0;
+
+        a {
+          font-weight: 600;
         }
       }
     }
-  }
-  .Switchers {
-    display: flex;
-    gap: 10px;
-    align-items: center;
   }
 }
 

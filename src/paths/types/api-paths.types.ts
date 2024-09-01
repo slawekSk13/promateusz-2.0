@@ -1,1 +1,1 @@
-export type ApiPath = "about";
+export type ApiPath = "about" | "book";

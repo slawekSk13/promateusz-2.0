@@ -1,12 +1,9 @@
 import { component$ } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
-import type { Locale } from "~/paths/types/locale.types";
+import { Locale, useLocale } from "~/helpers/use-locale.helper";
 
 export default component$(() => {
-  const {
-    params: { locale },
-  } = useLocation();
-  return <div>{NOT_FOUND_MESSAGE[locale as Locale]}</div>;
+  const locale = useLocale();
+  return <div>{NOT_FOUND_MESSAGE[locale]}</div>;
 });
 
 const NOT_FOUND_MESSAGE: Record<Locale, string> = {

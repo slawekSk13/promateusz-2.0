@@ -2,21 +2,24 @@ import { component$ } from "@builder.io/qwik";
 import { useLocation, useNavigate } from "@builder.io/qwik-city";
 import styles from "./locale-switcher.module.css";
 
-export default component$(() => {
+export default component$<{ callback: () => void }>(({ callback }) => {
   const nav = useNavigate();
   const {
     url: { pathname },
     params: { locale },
   } = useLocation();
 
-  const isEN = locale === "en";
+  const nextLocale = locale === "en" ? "pl" : "en";
 
   return (
     <button
       class={styles.LocaleSwitcher}
-      onClick$={() => nav(pathname.replace(locale, isEN ? "pl" : "en"))}
+      onClick$={async () => {
+        await nav(pathname.replace(locale, nextLocale));
+        callback();
+      }}
     >
-      {isEN ? "PL" : "GB"}
+      {nextLocale.toLocaleUpperCase()}
     </button>
   );
 });
