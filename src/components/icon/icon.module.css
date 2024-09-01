@@ -1,0 +1,6 @@
+.Icon:hover {
+  cursor: pointer;
+  path {
+    fill: var(--promateusz-accent);
+  }
+}
