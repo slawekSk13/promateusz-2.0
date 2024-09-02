@@ -1,5 +1,8 @@
 .Loader {
   --promateusz-loader-size: 200px;
+  --promateusz-pole-color: var(--promateusz-dark);
+  --promateusz-flag-color: var(--promateusz-secondary-accent);
+  --promateusz-mountain-color: var(--promateusz-white);
   position: absolute;
   inset: calc(50% - var(--promateusz-loader-size) / 2);
   height: var(--promateusz-loader-size);
@@ -12,8 +15,7 @@
     position: relative;
     margin: 0 auto;
     overflow: hidden;
-    background: var(--promateusz-dark);
-    z-index: 10;
+    background: var(--promateusz-accent);
   }
 
   .Wrapper div,
@@ -27,7 +29,7 @@
     height: 0;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    border-bottom: 150px solid var(--promateusz-white);
+    border-bottom: 150px solid var(--promateusz-mountain-color);
     bottom: 0;
     left: 0;
   }
@@ -37,7 +39,7 @@
     height: 0;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    border-bottom: 150px solid var(--promateusz-white);
+    border-bottom: 150px solid var(--promateusz-mountain-color);
     bottom: -170px;
     left: -130px;
     content: "";
@@ -48,72 +50,16 @@
     height: 0;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    border-bottom: 150px solid var(--promateusz-white);
+    border-bottom: 150px solid var(--promateusz-mountain-color);
     bottom: -200px;
     left: -50px;
     content: "";
   }
 
-  .Cloud:first-of-type {
-    width: 36px;
-    height: 30px;
-    top: 50px;
-    left: 110px;
-    background: var(--promateusz-secondary-accent);
-    animation: cloud 20s linear infinite;
-  }
-
-  .Cloud:first-of-type::before {
-    width: 50px;
-    height: 50px;
-    background: var(--promateusz-secondary-accent);
-    content: "";
-    border-radius: 50%;
-    bottom: 0;
-    left: -25px;
-  }
-
-  .Cloud:first-of-type::after {
-    width: 40px;
-    height: 40px;
-    background: var(--promateusz-secondary-accent);
-    content: "";
-    border-radius: 50%;
-    bottom: 0;
-    left: 15px;
-  }
-
-  .Cloud:nth-of-type(2) {
-    width: 18px;
-    height: 15px;
-    top: 30px;
-    left: 125px;
-    background: var(--promateusz-secondary-accent);
-    animation: cloud2 40s linear infinite;
-  }
-  .Cloud:nth-of-type(2)::before {
-    width: 25px;
-    height: 25px;
-    background: var(--promateusz-secondary-accent);
-    content: "";
-    border-radius: 50%;
-    bottom: 0;
-    left: 7px;
-  }
-  .Cloud:nth-of-type(2)::after {
-    width: 20px;
-    height: 20px;
-    background: var(--promateusz-secondary-accent);
-    content: "";
-    border-radius: 50%;
-    bottom: 0;
-    left: -8px;
-  }
-
   .Flag {
     width: 4px;
     height: 0;
-    background: var(--promateusz-tertiary-accent);
+    background: var(--promateusz-pole-color);
     top: 54px;
     left: calc(50% - 2px);
     animation: pole 10s linear infinite;
@@ -125,8 +71,8 @@
     width: 0;
     left: 8px;
     top: 0;
-    border-top: 8px solid var(--promateusz-accent);
-    border-bottom: 8px solid var(--promateusz-accent);
+    border-top: 8px solid var(--promateusz-flag-color);
+    border-bottom: 8px solid var(--promateusz-flag-color);
     border-right: 0 solid transparent;
     border-left: 0 solid transparent;
     animation: tip 10s linear infinite;
@@ -136,7 +82,7 @@
     content: "";
     height: 16px;
     width: 0;
-    background: var(--promateusz-accent);
+    background: var(--promateusz-flag-color);
     top: 0;
     left: 4px;
     animation: flag 10s linear infinite;
@@ -283,23 +229,5 @@
   64% {
     border-right: 0 solid transparent;
     left: 8px;
-  }
-}
-
-@keyframes cloud {
-  0% {
-    transform: translateX(-200px);
-  }
-  100% {
-    transform: translateX(200px);
-  }
-}
-
-@keyframes cloud2 {
-  0% {
-    transform: translateX(-300px);
-  }
-  100% {
-    transform: translateX(300px);
   }
 }

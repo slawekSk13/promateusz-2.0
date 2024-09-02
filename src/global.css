@@ -30,6 +30,34 @@ body {
   scrollbar-gutter: stable;
 }
 
+a {
+  color: var(--promateusz-dark);
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.3s color;
+
+  &:hover {
+    color: var(--promateusz-accent);
+  }
+}
+
+.missing {
+  a {
+    font-weight: 600;
+  }
+  a,
+  p {
+    text-align: center;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 260px);
+  gap: 200px;
+  padding-inline: 80px;
+}
+
 iframe {
   height: calc(100cqh - 100px);
   width: 100%;

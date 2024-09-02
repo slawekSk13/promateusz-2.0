@@ -42,28 +42,17 @@ header {
       align-items: center;
     }
 
-    a {
-      color: var(--promateusz-dark);
-      display: inline-block;
-      text-decoration: none;
-      transition: 0.3s color;
+    .ActivePath {
+      color: var(--promateusz-accent);
+      pointer-events: none;
+    }
 
-      &:hover {
-        color: var(--promateusz-accent);
-      }
-
-      &.ActivePath {
-        color: var(--promateusz-accent);
-        pointer-events: none;
-      }
-
-      &.Decoration:before {
-        content: "|";
-        position: relative;
-        color: var(--promateusz-secondary-accent);
-        left: -15px;
-        top: -1px;
-      }
+    .Decoration:before {
+      content: "|";
+      position: relative;
+      color: var(--promateusz-secondary-accent);
+      left: -15px;
+      top: -1px;
     }
 
     ul {
