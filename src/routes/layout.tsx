@@ -4,6 +4,7 @@ import { RequestHandler, routeLoader$ } from "@builder.io/qwik-city";
 import Header from "~/components/header/header";
 import Main from "~/components/main/main";
 import { fetchData } from "~/helpers/use-data.helper";
+import { Footer } from "~/components/footer/footer.component";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -29,6 +30,7 @@ export default component$(() => {
       <Main>
         <Slot />
       </Main>
+      <Footer />
     </>
   );
 });
