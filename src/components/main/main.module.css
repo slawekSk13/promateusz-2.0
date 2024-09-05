@@ -3,5 +3,5 @@
   background-color: var(--promateusz-white);
   min-height: calc(100vh - 100px);
   box-shadow: 0 0 160px 60px var(--promateusz-tertiary-accent);
-  padding: 100px 0 0;
+  padding: 10px 0 100px;
 }

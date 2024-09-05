@@ -19,15 +19,15 @@ export default component$(() => {
   const toggleIsOpen = $(() => (isOpen.value = !isOpen.value));
 
   return (
-    <header>
-      <img
-        src={"/pictures/logo.png"}
-        alt={"Logo"}
-        class={styles.Logo}
-        height={80}
-        onClick$={toggleIsOpen}
-      />
-      <div class={[styles.Header, { [styles.Open]: isOpen.value }]}>
+    <header class={{ [styles.Open]: isOpen.value }}>
+      <div onClick$={toggleIsOpen} class={styles.Hamburger}>
+        <span class={styles.Bar} />
+        <span class={styles.Bar} />
+        <span class={styles.Bar} />
+        <span class={styles.Bar} />
+      </div>
+      <div class={styles.Header} />
+      <div class={styles.Menu}>
         <ul>
           {FE_PATHS.map(({ path, label }, i) => (
             <li key={path}>
@@ -61,7 +61,6 @@ export default component$(() => {
           />
         </div>
         <LocaleSwitcher callback={toggleIsOpen} />
-        <Icon icon="close" onClick={toggleIsOpen} />
       </div>
     </header>
   );
