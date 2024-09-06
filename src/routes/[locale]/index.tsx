@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { fetchData, parseStoryToContent } from "~/helpers/use-data.helper";
 import type { AboutAttributes } from "~/routes/[locale]/about/about.types";
+
 export const useAbout = routeLoader$(async (requestEvent) => {
   return parseStoryToContent(
     await fetchData<AboutAttributes>("about", requestEvent),

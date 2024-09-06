@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import type { DocumentHead, RequestEventLoader } from "@builder.io/qwik-city";
+import { DocumentHead, RequestEventLoader } from "@builder.io/qwik-city";
 
 export const onGet = ({ redirect }: RequestEventLoader) => {
   throw redirect(302, "/pl/");
@@ -14,7 +14,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Promateusz",
+      content: "Promateusz - IVBV Mountain Guide Mateusz Zabłocki",
     },
   ],
 };
