@@ -13,7 +13,6 @@
     max-width: calc((100vw - 80px) / 5);
     max-height: calc((100vw - 80px) / 5);
     border-radius: 50%;
-    cursor: pointer;
     z-index: 1;
   }
 }
