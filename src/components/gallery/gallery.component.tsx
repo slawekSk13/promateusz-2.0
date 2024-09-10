@@ -51,10 +51,10 @@ export const Gallery = component$<{ photos: string[] }>(({ photos }) => {
           const diffX = startPoint.value!.clientX - clientX;
           const diffY = startPoint.value!.clientY - clientY;
           if (Math.abs(diffY) > Math.abs(diffX)) return;
-          if (diffX > 50) {
+          if (diffX > 80) {
             await goRight();
             startPoint.value = { clientX, clientY };
-          } else if (diffX < -50) {
+          } else if (diffX < -80) {
             await goLeft();
             startPoint.value = { clientX, clientY };
           }
