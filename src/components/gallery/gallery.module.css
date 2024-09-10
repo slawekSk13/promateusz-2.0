@@ -8,7 +8,7 @@
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
-  @media (hover: hover) {
+  @media (pointer: fine) {
     &:hover .Photo {
       filter: grayscale(1);
     }
