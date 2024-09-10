@@ -10,9 +10,12 @@ export const getPicturesFromFolder = server$(function (
 ): string[] {
   const controller = new AbortController();
   cleanup(() => controller.abort());
-  return readdirSync(`./public${PICTURES_PATH}${folderName}`);
+  return readdirSync(`./public${PICTURES_PATH}${folderName}`).map(
+    (filePath) => folderName + filePath,
+  );
 });
 
 export function fileNameToAlt(fileName: string): string {
-  return fileName.replace(".png", "").replaceAll("_", " ");
+  const chunks = fileName.split("/");
+  return chunks[chunks.length - 1].replace(/\.\S+/, "").replaceAll("_", " ");
 }

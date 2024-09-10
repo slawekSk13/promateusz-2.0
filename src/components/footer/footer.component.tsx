@@ -11,13 +11,18 @@ export const Footer = component$(() => {
   );
 
   return (
-    <footer class={styles.Footer}>
-      <Resource
-        value={logosSource}
-        onResolved={(logos) =>
-          logos.map((logo) => <Logo key={logo} folder={LOGOS} path={logo} />)
-        }
-      />
-    </footer>
+    <Resource
+      value={logosSource}
+      onResolved={(logos) => (
+        <footer
+          class={styles.Footer}
+          style={{ "--promateusz-logos-count": logos.length }}
+        >
+          {logos.map((logo) => (
+            <Logo key={logo} path={logo} />
+          ))}
+        </footer>
+      )}
+    />
   );
 });

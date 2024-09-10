@@ -72,13 +72,13 @@ type FrontendPath =
   | "safety"
   | "book"
   | "testimonials"
-  | "photos";
+  | "gallery";
 
 const FE_PATHS: { label: Record<Locale, string>; path: FrontendPath }[] = [
   { path: "", label: { en: "About me", pl: "O mnie" } },
   { path: "offer", label: { en: "Offer", pl: "Oferta" } },
   { path: "book", label: { en: "Book", pl: "Zarezerwuj" } },
-  // { path: "photos", label: { en: "Photos", pl: "Zdjęcia" } },
+  { path: "gallery", label: { en: "Gallery", pl: "Zdjęcia" } },
   // { path: "testimonials", label: { en: "Testimonials", pl: "Opinie" } },
   // { path: "safety", label: { en: "Safety", pl: "Bezpieczeństwo" } },
 ];

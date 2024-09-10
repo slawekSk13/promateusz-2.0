@@ -1,6 +1,6 @@
 .Logo {
-  width: min(80px, calc((100vw - 80px) / 5));
-  height: min(80px, calc((100vw - 80px) / 5));
+  width: min(80px, calc((100vw - 80px) / var(--promateusz-logos-count, 4)));
+  height: min(80px, calc((100vw - 80px) / var(--promateusz-logos-count, 4)));
   border-radius: 50%;
   z-index: 1;
 }
