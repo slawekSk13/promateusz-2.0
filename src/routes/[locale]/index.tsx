@@ -28,7 +28,7 @@ export default component$(() => {
             />
           )}
           {i === 3 && (
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div style={{ display: "flex", gap: "10px" }} key={p + "img"}>
               <img
                 src="/pictures/st.jpeg"
                 style={{ maxWidth: "calc(50% - 5px)" }}

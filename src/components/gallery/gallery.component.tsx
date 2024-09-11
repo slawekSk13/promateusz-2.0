@@ -61,13 +61,7 @@ export const Gallery = component$<{ photos: string[] }>(({ photos }) => {
         }}
       >
         <div class={styles.IconWrapper}>
-          <Icon
-            icon={"close"}
-            onClick={$(() => {
-              fullscreenPhoto.value = null;
-              modalRef.value?.close();
-            })}
-          />
+          <Icon icon={"close"} onClick={$(() => modalRef.value?.close())} />
         </div>
         {fullscreenPhoto.value && (
           <img

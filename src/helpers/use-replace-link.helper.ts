@@ -7,7 +7,7 @@ function replacer(matched: string) {
   }
 
   return `<a href="${withProtocol}">
-    ${matched.replace("https://", "")}
+    ${matched.replace("https://", "").split("/")[0]}
   </a>`;
 }
 
