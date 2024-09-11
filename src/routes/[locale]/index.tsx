@@ -13,7 +13,7 @@ export default component$(() => {
   return (
     <div
       style={{
-        paddingInline: "60px",
+        paddingInline: "20px",
       }}
     >
       {data.value.map((p, i) => (
