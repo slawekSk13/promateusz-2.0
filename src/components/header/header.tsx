@@ -30,7 +30,7 @@ export default component$(() => {
       <div class={styles.Menu}>
         <ul>
           {FE_PATHS.map(({ path, label }, i) => (
-            <li key={path}>
+            <li key={path} onClick$={toggleIsOpen}>
               <a
                 href={`/${locale}/${path}`}
                 class={{
@@ -79,8 +79,6 @@ const FE_PATHS: { label: Record<Locale, string>; path: FrontendPath }[] = [
   { path: "offer", label: { en: "Offer", pl: "Oferta" } },
   { path: "book", label: { en: "Book", pl: "Zarezerwuj" } },
   { path: "gallery", label: { en: "Gallery", pl: "Zdjęcia" } },
-  // { path: "testimonials", label: { en: "Testimonials", pl: "Opinie" } },
-  // { path: "safety", label: { en: "Safety", pl: "Bezpieczeństwo" } },
 ];
 
 const isCurrentPath = (path: FrontendPath, pathName: string) => {
