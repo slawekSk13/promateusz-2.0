@@ -1,5 +1,5 @@
 .Offer {
-  padding-inline: 20px;
+  padding-inline: min(60px, 5vw);
   a {
     font-family: "Merriweather", serif;
     color: var(--promateusz-accent);
