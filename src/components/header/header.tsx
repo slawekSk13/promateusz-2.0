@@ -60,19 +60,13 @@ export default component$(() => {
             onClick={$(() => navigator.clipboard.writeText(mail))}
           />
         </div>
-        <LocaleSwitcher callback={toggleIsOpen} />
+        <LocaleSwitcher />
       </div>
     </header>
   );
 });
 
-type FrontendPath =
-  | ""
-  | "offer"
-  | "safety"
-  | "book"
-  | "testimonials"
-  | "gallery";
+type FrontendPath = "" | "offer" | "book" | "gallery";
 
 const FE_PATHS: { label: Record<Locale, string>; path: FrontendPath }[] = [
   { path: "", label: { en: "About me", pl: "O mnie" } },

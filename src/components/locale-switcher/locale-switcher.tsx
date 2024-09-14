@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { useLocation, useNavigate } from "@builder.io/qwik-city";
 import styles from "./locale-switcher.module.css";
 
-export default component$<{ callback: () => void }>(({ callback }) => {
+export default component$(() => {
   const nav = useNavigate();
   const {
     url: { pathname },
@@ -16,7 +16,6 @@ export default component$<{ callback: () => void }>(({ callback }) => {
       class={styles.LocaleSwitcher}
       onClick$={async () => {
         await nav(pathname.replace(locale, nextLocale));
-        callback();
       }}
     >
       {nextLocale.toLocaleUpperCase()}
