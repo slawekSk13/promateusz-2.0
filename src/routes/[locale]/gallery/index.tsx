@@ -70,6 +70,9 @@ export default component$(() => {
               photos={photos}
               onPhotoClick={onPhotoClick}
               title={TITLES.summer}
+              links={Object.values(TITLES).filter(
+                (t) => t.en !== TITLES.summer.en,
+              )}
             />
           );
         }}
@@ -83,6 +86,9 @@ export default component$(() => {
               photos={photos}
               onPhotoClick={onPhotoClick}
               title={TITLES.winter}
+              links={Object.values(TITLES).filter(
+                (t) => t.en !== TITLES.winter.en,
+              )}
             />
           );
         }}
@@ -96,6 +102,9 @@ export default component$(() => {
               photos={photos}
               onPhotoClick={onPhotoClick}
               title={TITLES.training}
+              links={Object.values(TITLES).filter(
+                (t) => t.en !== TITLES.training.en,
+              )}
             />
           );
         }}

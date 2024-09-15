@@ -17,6 +17,15 @@
     }
   }
 
+  .Links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    a {
+      padding: 10px 20px;
+    }
+  }
+
   .Wrapper {
     overflow: hidden;
     height: 200px;
